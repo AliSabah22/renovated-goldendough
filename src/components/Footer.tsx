@@ -46,12 +46,12 @@ const Footer = () => {
             <h3 className="text-xl font-serif text-gold">Contact Us</h3>
             <div className="space-y-2">
               <p className="text-white/80">
-                123 Main Street<br />
-                Mississauga, ON L5M 1A1
+                800 Dundas St E<br />
+                Mississauga, ON L4Y 2B6
               </p>
               <p className="text-white/80">
                 <a href="tel:+1234567890" className="hover:text-gold transition-colors">
-                  (123) 456-7890
+                (905) 949-6521
                 </a>
               </p>
               <p className="text-white/80">
