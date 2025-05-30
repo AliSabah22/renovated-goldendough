@@ -22,13 +22,6 @@ const nextConfig = {
   reactStrictMode: true,
   // Optimize development performance
   swcMinify: true,
-  // Reduce the number of pages that are pre-rendered
-  experimental: {
-    optimizeCss: true,
-    scrollRestoration: true,
-    optimizePackageImports: ['framer-motion'],
-    webpackBuildWorker: true,
-  },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
