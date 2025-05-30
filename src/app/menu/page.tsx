@@ -368,10 +368,13 @@ export default function Menu() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-50 to-transparent" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <h2 className="h2 text-gold">{section.title}</h2>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-dark-50/80 backdrop-blur-sm -m-4 rounded-lg" />
+                    </div>
                   </div>
                 </div>
                 <div className="p-6">
+                  <h2 className="h2 text-gold mb-1">{section.title}</h2>
                   <p className="body-small text-white">
                     {menuItems[section.id].length} items available
                   </p>
