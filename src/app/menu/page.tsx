@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import ImageWithFallback from '@/components/ImageWithFallback'
+import Image from 'next/image'
 import ExpandedMenu from '@/components/ExpandedMenu'
 import Gallery from '@/components/Gallery'
 
@@ -12,19 +12,19 @@ const menuItems = {
       name: 'Chicken Shawarma',
       description: 'Marinated chicken shawarma served with rice or french fries and fresh pita bread',
       price: '$16.99',
-      image: '/images/menu/chicken shawarma.jpg'
+      image: '/images/menu/chicken-plate.jpg'
     },
     {
       name: 'Beef Shawarma',
       description: 'Tender beef shawarma served with rice or french fries and fresh pita bread',
       price: '$18.99',
-      image: '/images/menu/beef shawarma.jpg'
+      image: '/images/menu/beef shawarma plate.jpg'
     },
     {
       name: 'Chicken & Beef Shawarma',
       description: 'Combination of chicken and beef shawarma served with rice or french fries and fresh pita bread',
       price: '$18.99',
-      image: '/images/menu/mixed grill plate.jpg'
+      image: '/images/menu/half chicken, half shawarma plate .jpg'
     },
     {
       name: 'Mixed Grill',
@@ -36,19 +36,19 @@ const menuItems = {
       name: 'Kafta',
       description: 'Grilled ground beef and lamb kafta served with rice or french fries and fresh pita bread',
       price: '$17.99',
-      image: '/images/menu/kafta.jpg'
+      image: '/images/menu/kafta plate.jpg'
     },
     {
       name: 'BBQ Beef',
       description: 'Grilled beef served with rice or french fries and fresh pita bread',
       price: '$21.99',
-      image: '/images/menu/bbq beef.jpg'
+      image: '/images/menu/beef-BBQ-plate.jpg'
     },
     {
       name: 'Shish Tawouk',
       description: 'Grilled chicken skewers served with rice or french fries and fresh pita bread',
       price: '$18.99',
-      image: '/images/menu/shish tawouk.jpg'
+      image: '/images/menu/tawook plate.jpg'
     }
   ],
   sandwiches: [
@@ -56,43 +56,43 @@ const menuItems = {
       name: 'Chicken Shawarma Sandwich',
       description: 'Chicken shawarma wrapped in our fresh pita bread with garlic sauce',
       price: '$9.49',
-      image: '/images/menu/chicken shawarma.jpg'
+      image: '/images/menu/chicken shawarma wrap.jpg'
     },
     {
       name: 'Beef Shawarma Sandwich',
       description: 'Beef shawarma wrapped in our fresh pita bread with garlic sauce',
       price: '$10.49',
-      image: '/images/menu/beef shawarma.jpg'
+      image: '/images/menu/beef-shawarma-wrap.jpg'
     },
     {
       name: 'Kafta Sandwich',
       description: 'Grilled kafta wrapped in our fresh pita bread with garlic sauce',
       price: '$9.99',
-      image: '/images/menu/kafta.jpg'
+      image: '/images/menu/kafta wrap.jpg'
     },
     {
       name: 'Shish Tawouk Sandwich',
       description: 'Grilled chicken skewers wrapped in our fresh pita bread with garlic sauce',
       price: '$10.99',
-      image: '/images/menu/shish tawouk.jpg'
+      image: '/images/menu/Tawook-wrap.jpg'
     },
     {
       name: 'BBQ Beef Sandwich',
       description: 'Grilled beef wrapped in our fresh pita bread with garlic sauce',
       price: '$11.99',
-      image: '/images/menu/bbq beef.jpg'
+      image: '/images/menu/BBQ-wrap.jpg'
     },
     {
       name: 'Beef Burger Sandwich',
       description: 'Beef patty wrapped in our fresh pita bread with garlic sauce',
       price: '$8.99',
-      image: '/images/menu/beef burger.jpg'
+      image: '/images/menu/burger.jpg'
     },
     {
       name: 'Falafel Sandwich',
       description: 'Crispy falafel balls with tahini sauce and vegetables',
       price: '$8.99',
-      image: '/images/menu/falafel.jpg'
+      image: '/images/menu/falafel wrap.jpg'
     }
   ],
   manakeesh: [
@@ -100,145 +100,139 @@ const menuItems = {
       name: 'Cheese Manakeesh',
       description: 'Traditional Lebanese flatbread topped with our special cheese blend',
       price: '$7.99',
-      image: '/images/menu/cheese manakeesh.jpg'
+      image: '/images/menu/cheese.jpg'
     },
     {
       name: 'Cheese Veggie Manakeesh',
       description: 'Flatbread topped with cheese and fresh vegetables',
       price: '$9.99',
-      image: '/images/menu/cheese veggie manakeesh.jpg'
+      image: '/images/menu/cheese-closed.jpg'
     },
     {
       name: 'Cheese with Chicken Manakeesh',
       description: 'Flatbread topped with cheese and grilled chicken',
       price: '$10.99',
-      image: '/images/menu/cheese chicken manakeesh.jpg'
+      image: '/images/menu/chicken-with-cheese.jpg'
     },
     {
       name: 'Spicy Cheese Manakeesh',
       description: 'Flatbread topped with spicy cheese blend',
       price: '$8.49',
-      image: '/images/menu/spicy cheese manakeesh.jpg'
+      image: '/images/menu/spicy-cheese.jpg'
     },
     {
       name: 'Zaatar Manakeesh',
       description: 'Traditional Lebanese flatbread topped with zaatar and olive oil',
       price: '$5.99',
-      image: '/images/menu/zaatar manakeesh.jpg'
+      image: '/images/menu/zattar.jpg'
     },
     {
       name: 'Zaatar Veggie Manakeesh',
       description: 'Flatbread topped with zaatar and fresh vegetables',
       price: '$7.99',
-      image: '/images/menu/zaatar veggie manakeesh.jpg'
+      image: '/images/menu/veggie zattar.jpg'
     },
     {
       name: 'Zaatar with Cheese Manakeesh',
       description: 'Flatbread topped with zaatar and cheese',
       price: '$7.99',
-      image: '/images/menu/zaatar cheese manakeesh.jpg'
+      image: '/images/menu/zattar-with-cheese.jpg'
     },
     {
       name: 'Lahim Baageen',
       description: 'Flatbread topped with seasoned ground beef',
       price: '$6.49',
-      image: '/images/menu/lahim baageen.jpg'
+      image: '/images/menu/lahim-baageen.jpg'
     },
     {
       name: 'Sujuk Manakeesh',
       description: 'Flatbread topped with spicy beef sausage',
       price: '$7.99',
-      image: '/images/menu/sujuk manakeesh.jpg'
+      image: '/images/menu/sujuk.jpg'
     },
     {
       name: 'Sujuk with Cheese Manakeesh',
       description: 'Flatbread topped with spicy beef sausage and cheese',
       price: '$9.99',
-      image: '/images/menu/sujuk cheese manakeesh.jpg'
+      image: '/images/menu/sujuk-with-cheese.jpg'
     },
     {
       name: 'Kishek Manakeesh',
       description: 'Flatbread topped with fermented yogurt and bulgur',
       price: '$8.49',
-      image: '/images/menu/kishek manakeesh.jpg'
+      image: '/images/menu/kishek.jpg'
     },
     {
       name: 'Kafta Manakeesh',
       description: 'Flatbread topped with seasoned ground beef and lamb',
       price: '$8.49',
-      image: '/images/menu/kafta manakeesh.jpg'
+      image: '/images/menu/kafta.jpg'
     },
     {
       name: 'Falafel Manakeesh',
       description: 'Flatbread topped with crispy falafel',
       price: '$8.99',
-      image: '/images/menu/falafel manakeesh.jpg'
+      image: '/images/menu/falafel-man.jpg'
     },
     {
       name: 'Mortadella with Cheese Manakeesh',
       description: 'Flatbread topped with mortadella and cheese',
       price: '$9.99',
-      image: '/images/menu/mortadella cheese manakeesh.jpg'
+      image: '/images/menu/Mortadella-with-Cheese.jpg'
     },
     {
       name: 'Labneh Manakeesh',
       description: 'Flatbread topped with strained yogurt',
       price: '$8.49',
-      image: '/images/menu/labneh manakeesh.jpg'
+      image: '/images/menu/labneh.jpg'
     },
     {
       name: 'Filfil Manakeesh',
       description: 'Flatbread topped with spicy pepper mix',
       price: '$8.49',
-      image: '/images/menu/filfil manakeesh.jpg'
+      image: '/images/menu/filfil.jpg'
     },
     {
       name: 'Spinach Manakeesh',
       description: 'Flatbread topped with seasoned spinach',
       price: '$6.99',
-      image: '/images/menu/spinach manakeesh.jpg'
+      image: '/images/menu/spinch.jpg'
     },
     {
       name: 'Spinach with Cheese Manakeesh',
       description: 'Flatbread topped with spinach and cheese',
       price: '$8.99',
-      image: '/images/menu/spinach cheese manakeesh.jpg'
+      image: '/images/menu/spinch.jpg'
     },
     {
       name: 'Egg Manakeesh',
       description: 'Flatbread topped with egg',
       price: '$5.99',
-      image: '/images/menu/egg manakeesh.jpg'
+      image: '/images/menu/egg.jpg'
     },
     {
       name: 'Egg Omelet Manakeesh',
       description: 'Flatbread topped with egg omelet',
       price: '$8.49',
-      image: '/images/menu/egg omelet manakeesh.jpg'
-    },
-    {
-      name: 'Beef Pepperoni Pizza',
-      description: 'Flatbread topped with beef pepperoni and cheese',
-      price: '$9.99',
-      image: '/images/menu/beef pepperoni pizza.jpg'
+      image: '/images/menu/egg-omlette.jpg'
     },
     {
       name: 'Pizza Veggie',
       description: 'Flatbread topped with vegetables and cheese',
       price: '$9.99',
-      image: '/images/menu/pizza veggie.jpg'
+      image: '/images/menu/veggie-pizza.jpg'
     },
     {
       name: 'Nutella Manakeesh',
       description: 'Flatbread topped with Nutella',
       price: '$7.99',
-      image: '/images/menu/nutella manakeesh.jpg'
+      image: '/images/menu/cheese-closed.jpg'
     },
     {
       name: 'Nutella with Cheese Manakeesh',
       description: 'Flatbread topped with Nutella and cheese',
       price: '$8.99',
-      image: '/images/menu/nutella cheese manakeesh.jpg'
+      image: '/images/menu/cheese-closed.jpg'
     }
   ],
   appetizers: [
@@ -252,13 +246,13 @@ const menuItems = {
       name: 'Hummus with Chicken',
       description: 'Hummus topped with grilled chicken',
       price: '$14.99',
-      image: '/images/menu/hummus chicken.jpg'
+      image: '/images/menu/hummus-with-chicken.jpg'
     },
     {
       name: 'Hummus with Beef',
       description: 'Hummus topped with grilled beef',
       price: '$15.99',
-      image: '/images/menu/hummus beef.jpg'
+      image: '/images/menu/hummus-with-beef.jpg'
     },
     {
       name: 'Foul',
@@ -270,31 +264,31 @@ const menuItems = {
       name: 'Moutabbal',
       description: 'Smoky eggplant dip with tahini and olive oil',
       price: '$9.99',
-      image: '/images/menu/moutabbal.jpg'
+      image: '/images/menu/hummus.jpg'
     },
     {
       name: 'Fatteh',
       description: 'Layered dish with chickpeas, yogurt, and crispy bread',
       price: '$15.99',
-      image: '/images/menu/fatteh.jpg'
+      image: '/images/menu/hummus.jpg'
     },
     {
       name: 'Lebaneh',
       description: 'Strained yogurt with olive oil',
       price: '$9.99',
-      image: '/images/menu/lebaneh.jpg'
+      image: '/images/menu/labneh.jpg'
     },
     {
       name: 'Kebbeh (per piece)',
       description: 'Crispy bulgur shell filled with seasoned ground beef',
       price: '$2.49',
-      image: '/images/menu/kebbeh.jpg'
+      image: '/images/menu/kebbe plate.jpg'
     },
     {
       name: 'Kebbeh (dozen)',
       description: '12 pieces of crispy bulgur shells filled with seasoned ground beef',
       price: '$26.99',
-      image: '/images/menu/kebbeh dozen.jpg'
+      image: '/images/menu/kebbe plate.jpg'
     }
   ],
   familyPlatters: [
@@ -302,25 +296,25 @@ const menuItems = {
       name: 'Mixed BBQ Platter',
       description: 'Large platter of mixed grilled meats, rice, hummus, and salad (serves 4-6)',
       price: '$125.00',
-      image: '/images/menu/mixed bbq platter.jpg'
+      image: '/images/menu/mixed grill plate.jpg'
     },
     {
       name: 'BBQ Beef Platter',
       description: 'Large platter of grilled beef, rice, hummus, and salad (serves 4-6)',
       price: '$120.00',
-      image: '/images/menu/bbq beef platter.jpg'
+      image: '/images/menu/kafta plate.jpg'
     },
     {
       name: 'Kafta Platter',
       description: 'Large platter of grilled kafta, rice, hummus, and salad (serves 4-6)',
       price: '$90.00',
-      image: '/images/menu/kafta platter.jpg'
+      image: '/images/menu/kafta plate.jpg'
     },
     {
       name: 'Shish Tawouk Platter',
       description: 'Large platter of grilled chicken skewers, rice, hummus, and salad (serves 4-6)',
       price: '$102.00',
-      image: '/images/menu/shish tawouk platter.jpg'
+      image: '/images/menu/tawook plate.jpg'
     }
   ]
 }
@@ -365,8 +359,8 @@ export default function Menu() {
                 className="bg-dark-50 rounded-lg border border-gold/20 overflow-hidden cursor-pointer"
                 onClick={() => setExpandedSection(section.id)}
               >
-                <div className="relative h-48">
-                  <ImageWithFallback
+                <div className="relative w-full aspect-square">
+                  <Image
                     src={menuItems[section.id][0].image}
                     alt={section.title}
                     fill

@@ -17,7 +17,7 @@ export default function Home() {
         <section className="relative h-screen flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/hero/store front.jpg"
+              src="/images/hero/restaurant-front.jpg"
               alt="Golden Dough Bakery & Grill"
               fill
               className="object-cover"
@@ -30,21 +30,21 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative z-10 text-center text-white px-4"
+            className="relative z-10 text-center text-gold px-4"
           >
             <motion.h1 
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="h1 mb-6"
+              className="h1 mb-6 text-gold"
             >
-              Golden Dough
+              Golden Dough Bakery & Grill
             </motion.h1>
             <motion.p 
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="body-large mb-8 text-gold-light"
+              className="body-large mb-8 text-white"
             >
               Authentic Lebanese Cuisine
             </motion.p>
@@ -75,7 +75,7 @@ export default function Home() {
               >
                 <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl border border-gold/20">
                   <Image
-                    src="/images/about/store inside.jpg"
+                    src="/images/about/store-interior.jpg"
                     alt="Golden Dough Interior"
                     fill
                     className="object-cover"

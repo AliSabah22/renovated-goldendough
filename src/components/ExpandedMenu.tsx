@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import ImageWithFallback from './ImageWithFallback'
+import Image from 'next/image'
 
 interface MenuItem {
   name: string
@@ -64,8 +64,8 @@ const ExpandedMenu = ({ title, items, onClose }: ExpandedMenuProps) => {
                   animate={{ opacity: 1, y: 0 }}
                   className="bg-dark-50 rounded-lg border border-gold/20 overflow-hidden hover:border-gold/40 transition-colors duration-300"
                 >
-                  <div className="relative h-48">
-                    <ImageWithFallback
+                  <div className="relative w-full aspect-square">
+                    <Image
                       src={item.image}
                       alt={item.name}
                       fill
