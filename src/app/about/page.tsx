@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import ImageWithFallback from '@/components/ImageWithFallback'
+import Image from 'next/image'
 import ScrollAnimation from '@/components/ScrollAnimation'
 
 export default function About() {
@@ -11,8 +11,8 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <ImageWithFallback
-            src="/images/about/store front.jpg"
+          <Image
+            src="/images/hero/restaurant-front.jpg"
             alt="Golden Dough Bakery & Grill"
             fill
             className="object-cover"
@@ -38,8 +38,8 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollAnimation direction="left">
               <div className="relative h-[400px] rounded-lg overflow-hidden border border-gold/20 shadow-xl">
-                <ImageWithFallback
-                  src="/images/about/store inside.jpg"
+                <Image
+                  src="/images/about/store-inside.jpg"
                   alt="Golden Dough Interior"
                   fill
                   className="object-cover"
@@ -131,8 +131,8 @@ export default function About() {
             </ScrollAnimation>
             <ScrollAnimation direction="right">
               <div className="relative h-[400px] rounded-lg overflow-hidden border border-gold/20 shadow-xl">
-                <ImageWithFallback
-                  src="/images/about/store location.jpg"
+                <Image
+                  src="/images/about/location.jpg"
                   alt="Golden Dough Location"
                   fill
                   className="object-cover"

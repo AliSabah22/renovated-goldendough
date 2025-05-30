@@ -16,6 +16,20 @@ const galleryImages = [
   '/images/gallery/half chicken, half shawarma plate .jpg',
   '/images/gallery/kafta plate.jpg',
   '/images/gallery/veggie zattar.jpg',
+  '/images/gallery/beef-BBQ-plate.jpg',
+  '/images/gallery/chicken-plate.jpg',
+  '/images/gallery/tawook-wrap.jpg',
+  '/images/gallery/BBQ-wrap.jpg',
+  '/images/gallery/beef-shawarma-wrap.jpg',
+  '/images/gallery/cheese-closed.jpg',
+  '/images/gallery/Mortadella-with-Cheese.jpg',
+  '/images/gallery/chicken-shawarma-plate.jpg',
+  '/images/gallery/beef-shawarma-plate.jpg',
+  '/images/gallery/tawook-plate.jpg',
+  '/images/gallery/BBQ-beef-plate.jpg',
+  '/images/gallery/falafel-wrap.jpg',
+  '/images/gallery/fattoush-salad.jpg',
+  '/images/gallery/tabouleh-salad.jpg'
 ]
 
 const Gallery = () => {
