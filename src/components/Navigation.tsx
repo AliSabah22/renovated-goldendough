@@ -55,7 +55,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/order"
               className="btn-primary"
             >
               Order Now
@@ -115,7 +115,7 @@ const Navigation = () => {
                   </Link>
                 ))}
                 <Link
-                  href="/contact"
+                  href="/order"
                   className="btn-primary block text-center"
                   onClick={() => setIsOpen(false)}
                 >
