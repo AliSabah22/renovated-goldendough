@@ -2,7 +2,7 @@
 const nextConfig = {
   // Enable image optimization
   images: {
-    unoptimized: false,
+    unoptimized: true, // Required for Netlify deployment
     // Add image domains if needed
     domains: [],
     // Optimize image loading
