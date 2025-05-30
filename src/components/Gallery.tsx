@@ -33,20 +33,21 @@ const galleryImages = [
 ]
 
 const Gallery = () => {
-  // Repeat or randomly shuffle images if you want more slots
-  const images = [...galleryImages, ...galleryImages.slice(0, 4)] // 16 images for a fuller look
+  const half = Math.ceil(galleryImages.length / 2)
+  const topRowImages = galleryImages.slice(0, half)
+  const bottomRowImages = galleryImages.slice(half)
 
   return (
     <div className="py-16 overflow-hidden">
       {/* First row - slides right */}
       <div className="infinite-slider mb-8">
         <div className="slider-track">
-          {images.map((src, index) => (
+          {topRowImages.concat(topRowImages).map((src, index) => (
             <div key={`right-${index}`} className="flex-shrink-0 px-4">
               <div className="relative w-64 h-64 rounded-lg overflow-hidden border border-gold/20">
                 <Image
                   src={src}
-                  alt={`Gallery food ${index + 1}`}
+                  alt={`Gallery food top ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 384px"
@@ -62,12 +63,12 @@ const Gallery = () => {
       {/* Second row - slides left */}
       <div className="infinite-slider">
         <div className="slider-track-reverse">
-          {images.map((src, index) => (
+          {bottomRowImages.concat(bottomRowImages).map((src, index) => (
             <div key={`left-${index}`} className="flex-shrink-0 px-4">
               <div className="relative w-64 h-64 rounded-lg overflow-hidden border border-gold/20">
                 <Image
                   src={src}
-                  alt={`Gallery food ${index + 1}`}
+                  alt={`Gallery food bottom ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 384px"
