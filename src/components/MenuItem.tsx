@@ -3,11 +3,11 @@
 import React from 'react'
 import { MenuItem as MenuItemType } from '@/data/menu'
 
-// interface MenuItemProps {
-//   item: MenuItemType
-// }
+type MenuItemProps = {
+  item: MenuItemType
+}
 
-const MenuItem: React.FC<> = ({ item }) => {
+export default function MenuItem({ item }: MenuItemProps) {
   return (
     <div className="flex justify-between items-start py-4 border-b border-gold/20 last:border-0">
       <div className="flex-1">
@@ -21,6 +21,4 @@ const MenuItem: React.FC<> = ({ item }) => {
       )}
     </div>
   )
-}
-
-export default MenuItem 
+} 
